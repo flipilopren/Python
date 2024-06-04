@@ -12,7 +12,7 @@ def enviarDatos(): #Al activar enviarDatos ocurre:
         Texto1 = Label(text="Has respondido No", font=("Arial", 15)) 
         Texto1.grid(column=0, row=11)
         
-    elif mensaje == "Si":
+   elif mensaje := "{Si,si,SI}":
         Texto1 = Label(text="Has respondido Si", font=("Arial", 15))
         Texto1.grid(column=0, row=11)
         #import os
