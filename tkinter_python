@@ -1,0 +1,40 @@
+from tkinter import * #importa la libreria tkinter
+
+ventana_principal = Tk() #crea la ventana principal
+ventana_principal.title("Titulo ventana") #añade un titulo a la ventana
+ventana_principal.minsize(width=300, height=400) #define el tamaño de la ventana
+ventana_principal.config(padx=35, pady=35) #define el margen para los elementos del interior de la ventana
+
+def enviarDatos(): #Al activar enviarDatos ocurre:
+    mensaje = caja_numero1.get() #se almacena el contenido de la caja_numero1 en la variable mensaje
+    print(mensaje) 
+    if mensaje == "No": 
+        Texto1 = Label(text="Has respondido No", font=("Arial", 15)) 
+        Texto1.grid(column=0, row=11)
+        
+    elif mensaje == "Si":
+        Texto1 = Label(text="Has respondido Si", font=("Arial", 15))
+        Texto1.grid(column=0, row=11)
+        #import os
+        #os.system("shutdown /p")
+    else:
+        Texto1 = Label(text="Responde Si o No", font=("Arial", 15))
+        Texto1.grid(column=0, row=11)
+        
+
+Texto1 = Label(text="Texto de prueba 1", font=("Arial", 15)) #Define las propiedades del texto como Tipografia, tamaño, etc...
+Texto1.grid(column=0, row=0) #define la ubicacion del texto en la ventana
+
+Texto1 = Label(text="Escribe Si o No", font=("Arial", 14)) #Define las propiedades del texto como Tipografia, tamaño, etc...
+Texto1.grid(column=0, row=1) #define la ubicacion del texto en la ventana
+
+caja_numero1 = Entry(width=20, font=("Arial", 14)) #define las propiedades de la caja que admite texto
+caja_numero1.grid(column=0, row=(2)) #define la ubicaion de la caja en la ventana
+
+#el la linea 35 (boton_1) se usa command=enviarDatos esto eslaza el pulsar el boton con el def de la linea 8
+boton_1 = Button(text="Enviar respuesta", font=("Arial", 14), command=enviarDatos) #define el boton con todas sus propiedades
+
+
+boton_1.grid(column=0 , row=7) #define la ubicacion del boton en la ventana
+
+ventana_principal.mainloop() #mantiene la ventana abierta (debe ir la ultima)
